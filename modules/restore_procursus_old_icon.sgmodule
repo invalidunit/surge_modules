@@ -6,7 +6,7 @@
 [MITM]
 hostname = %APPEND% apt.procurs.us
 
-[Map Local]
-^https?:\/\/apt\.procurs\.us.*CydiaIcon@3x\.png data="https://invalidunit.github.io/bark_icons/procursus/procursus@3x.png"
-^https?:\/\/apt\.procurs\.us.*CydiaIcon@2x.png data="https://invalidunit.github.io/bark_icons/procursus/procursus@2x.png"
-^https?:\/\/apt\.procurs\.us.*CydiaIcon.png data="https://invalidunit.github.io/bark_icons/procursus/procursus.png"
+[URL Rewrite]
+^https?:\/\/apt\.procurs\.us.*CydiaIcon@3x\.png https://invalidunit.github.io/bark_icons/procursus/procursus@3x.png header
+^https?:\/\/apt\.procurs\.us.*CydiaIcon@2x.png https://invalidunit.github.io/bark_icons/procursus/procursus@2x.png header
+^https?:\/\/apt\.procurs\.us.*CydiaIcon.png https://invalidunit.github.io/bark_icons/procursus/procursus.png header
