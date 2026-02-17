@@ -3,7 +3,7 @@ name: "update telegram ruleset"
 on:
   schedule:
     - cron: '0 0 * * *'
-  workflow_run:
+  workflow_call:
 
 jobs:
   extract:
