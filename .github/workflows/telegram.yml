@@ -14,9 +14,9 @@ jobs:
       - name: Update Telegram Ruleset
         run: |
           mkdir -p './ruleset'
-          curl -s -o './ruleset/telegram.tmp' 'https://core.telegram.org/resources/cidr.txt'
-          awk '{ if ($0 ~ /:/) print "IP-CIDR6," $0; else print "IP-CIDR," $0 }' './ruleset/telegram.tmp' > './ruleset/telegram.list'
-          rm -f './ruleset/telegram.tmp'
+          curl -s -o '/tmp/telegram_cidr.list' 'https://core.telegram.org/resources/cidr.txt'
+          cat './ruleset/telegram.url' >'./ruleset/telegram.list'
+          awk '{ if ($0 ~ /:/) print "IP-CIDR6," $0; else print "IP-CIDR," $0 }' '/tmp/telegram_cidr.list' >> './ruleset/telegram.list'
           
       - name: save caches if local change
         if: success()
